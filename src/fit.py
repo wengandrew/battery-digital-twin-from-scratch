@@ -9,10 +9,13 @@ def least_squares(v_vec, i_vec, ocv, dt):
     Use least squares to estimate ECM parameters
     """
 
-    if len(ocv) == 1:
+    ocv = np.asarray(ocv)
+    ocv_size = ocv.shape[0] if len(ocv.shape) > 0 else 1
+
+    if ocv_size == 1:
         phi = np.vstack([-i_vec[1:], -i_vec[:-1], -(ocv - v_vec[:-1])]).T
-        YY  = ocv - v_vec[1:]
-    elif len(ocv) == len(v_vec):
+        YY = ocv - v_vec[1:]
+    elif ocv_size == len(v_vec):
         phi = np.vstack([-i_vec[1:], -i_vec[:-1], -(ocv[:-1] - v_vec[:-1])]).T
         YY  = ocv[1:] - v_vec[1:]
     else:

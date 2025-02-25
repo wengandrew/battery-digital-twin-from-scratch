@@ -13,7 +13,7 @@ def initialize(plt):
                   'size': 16
                   })
 
-    plt.rc('figure', **{'autolayout' : True,
+    plt.rc('figure', **{'autolayout' : False,
                     'figsize'    : (6, 6)
                     })
 
