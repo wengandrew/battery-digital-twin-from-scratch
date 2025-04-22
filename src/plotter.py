@@ -8,8 +8,8 @@ def initialize(plt):
     Initialize the plot configuration
     """
 
-    plt.rc('font', **{'family'     : 'sans-serif',
-                  'sans-serif' : ['Helvetica'],
+    plt.rc('font', **{'family' : 'serif',
+                  'serif' : ['Times New Roman'],
                   'size': 16
                   })
 
@@ -24,3 +24,4 @@ def initialize(plt):
     plt.rc('legend', fontsize='medium')
     plt.rc('image',  cmap='gray')
 
+    plt.rc('text.latex', preamble=r'\usepackage{times}')
