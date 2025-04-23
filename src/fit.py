@@ -35,11 +35,4 @@ def least_squares(v_vec, i_vec, ocv, dt):
 
     cond_num = np.linalg.cond(phi.T @ phi)
 
-    if R1 == 0:
-        R1 = np.nan
-    if C1 == 0:
-        C1 = np.nan
-    if Rs == 0:
-        Rs = np.nan
-
     return Rs, R1, C1, cond_num
